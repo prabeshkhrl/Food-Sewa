@@ -14,7 +14,9 @@ export default function RestaurantsPage() {
   const debouncedSearch = useDebounce(filters.search, 400);
 
   const { data, isLoading, error } = useRestaurants({
+  
     search: debouncedSearch,
+    category: filters.category,
     isActive: filters.isActive,
   });
 

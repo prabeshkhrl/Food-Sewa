@@ -1,93 +1,42 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, Users, Headphones } from "lucide-react";
-import Button from "../ui/Button";
 
 export default function PartnerCTA() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid lg:grid-cols-2 gap-8 items-center bg-white rounded-3xl border border-gray-100 p-8 sm:p-12 shadow-sm">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 mb-4">
-            <TrendingUp className="w-3.5 h-3.5 text-orange-500" />
-            <span className="text-xs font-semibold text-orange-600">
-              For restaurant owners
-            </span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-            Grow your restaurant with{" "}
-            <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
-              FoodHub
-            </span>
-          </h2>
-
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Reach thousands of hungry customers. Manage your menu, track
-            orders, and grow your business — all from one dashboard.
-          </p>
-
-          <ul className="space-y-2 mb-8">
-            {[
-              "Zero setup cost · No monthly fee",
-              "Real-time order notifications",
-              "Manage menus, images, and reviews",
-              "Detailed analytics and reports",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2 text-sm text-gray-700"
-              >
-                <span className="w-5 h-5 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">
-                  ✓
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex flex-wrap gap-3">
-            <Button as="link" to="/auth/register" size="lg">
-              Register your restaurant <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button as="link" to="/auth" variant="secondary" size="lg">
-              Already a partner? Sign in
-            </Button>
-          </div>
+    <section className="bg-[#FFF5F3] py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Column: Image */}
+        <div className="relative w-full overflow-hidden rounded-lg shadow-sm order-2 lg:order-1">
+          <img
+            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80"
+            alt="Restaurant staff handing over a delivery order"
+            className="w-full h-[350px] sm:h-[450px] lg:h-[480px] object-cover"
+          />
         </div>
 
-        {/* Feature cards */}
-        <div className="space-y-4">
-          <FeatureRow
-            icon={TrendingUp}
-            title="Grow faster"
-            desc="Get discovered by thousands of new customers every day."
-          />
-          <FeatureRow
-            icon={Users}
-            title="Add admins"
-            desc="Invite your team to manage orders and inventory."
-          />
-          <FeatureRow
-            icon={Headphones}
-            title="Live support"
-            desc="Our team is here to help you succeed."
-          />
+        {/* Right Column: Content */}
+        <div className="max-w-xl order-1 lg:order-2">
+          {/* Headline */}
+          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
+            Grow your business <br className="hidden sm:inline" />
+            with us
+          </h2>
+
+          {/* Description */}
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
+            Businesses large and small partner with us to reach new customers,
+            increase order volume, and drive more sales.
+          </p>
+
+          {/* CTA Button */}
+          <Link
+            to="/auth/register"
+            className="inline-block bg-[#FF3008] hover:bg-[#E02B07] text-white font-bold text-sm sm:text-base px-6 py-3 rounded-full transition-colors duration-200 shadow-sm"
+          >
+            Become a Partner
+          </Link>
         </div>
       </div>
     </section>
-  );
-}
-
-function FeatureRow({ icon: Icon, title, desc }) {
-  return (
-    <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 hover:bg-orange-50 transition">
-      <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
-        <Icon className="w-5 h-5 text-orange-500" />
-      </div>
-      <div>
-        <p className="font-semibold text-gray-900 text-sm">{title}</p>
-        <p className="text-xs text-gray-500 mt-0.5">{desc}</p>
-      </div>
-    </div>
   );
 }

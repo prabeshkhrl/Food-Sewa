@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const variants = {
   primary:
-    "bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-md hover:shadow-lg",
+    "bg-gradient-to-r from-red-600 to-orange-500 text-white shadow-md hover:shadow-lg",
   secondary:
     "bg-white border border-gray-200 text-gray-800 hover:border-orange-300 hover:text-orange-600",
   ghost: "text-gray-700 hover:bg-orange-50 hover:text-orange-600",

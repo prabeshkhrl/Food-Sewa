@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} FoodHub. All rights reserved.
+          © {new Date().getFullYear()} FoodSewa. All rights reserved.
         </div>
       </div>
     </footer>
